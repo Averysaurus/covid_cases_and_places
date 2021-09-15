@@ -40,10 +40,13 @@ cov_edge_fin <- cov_edges %>%
     left_join(cov_nodes, by = c("building" = "label")) %>% 
     rename(to = id)
 
+
+library(networkD3)
+
+# format for d3 function
 nodes_d3 <- mutate(cov_nodes, id = id - 1)
 edges_d3 <- mutate(cov_edge_fin, from = from - 1, to = to - 1)
 
-library(networkD3)
 
 # script for click on node object.
 MyClickScript <- 
@@ -53,7 +56,7 @@ MyClickScript <-
 
 
 ui <- bootstrapPage(
-    # stlying and text
+    # styling and text
     tags$style(type = "text/css",
                "html, body {width:100%;height:100%;font-family: Courier New, sans-serif;}"),
     absolutePanel(
