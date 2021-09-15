@@ -87,5 +87,7 @@ server <- function(input, output) {
                                    clickAction = MyClickScript, legend = F)})
 }
 
- 
+    #run server. 
 shinyApp(ui = ui, server = server)
+
+
