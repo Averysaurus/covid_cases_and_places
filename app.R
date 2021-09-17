@@ -69,7 +69,10 @@ ui <- bootstrapPage(
           tags$h5(HTML(paste("You can scroll around, zoom in and out. Click and drag a node to get a better sense of its connection with the network. <p> "))),
         tags$h5(HTML(paste("<p>Data Source: <a href='https://coronavirus.berkeley.edu/dashboard/workplace-exposure/'> UCB Workplace Exposure Dashboard</a> <p><p>"))),
         HTML(paste("<p> <p> Author: <a href= 'https://www.linkedin.com/in/averysaurus/' > Avery Richards, MPH(c)</a> <p>")),
-    HTML(paste("<p> <p> Git <a href= 'https://github.com/Averysaurus/covid_cases_and_places' > repo</a> <p>"))),
+    HTML(paste("<p> <p> Git <a href= 'https://github.com/Averysaurus/covid_cases_and_places' > repo</a> <p>")),
+       absolutePanel( bottom = 20, right = 400, fixed = TRUE, style = "z-index:500; text-align: left;",
+        HTML(paste("Note this makes no causal connection between cases based on location, it's merely exploring potential exposure risk."))
+        ),
     
     # network object
     forceNetworkOutput("cov_net", width = "100%", height = "100%")
